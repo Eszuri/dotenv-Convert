@@ -31,10 +31,8 @@ document.getElementById("buttonAdd").addEventListener("click", () => {
 
 // Copy Text
 document.getElementById("copyText").addEventListener("click", () => {
-    // Get the text field
-    var copyText = document.getElementById("env1");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
-    alert("Berhasil Tersalin ");
+    var copyText = document.getElementById("env1").value;
+    document.getElementById("prw").innerText = copyText;
+    navigator.clipboard.writeText(document.getElementById("prw").innerText);
+    // alert("Berhasil Tersalin ");
 })
