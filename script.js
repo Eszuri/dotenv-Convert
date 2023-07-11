@@ -33,6 +33,11 @@ document.getElementById("buttonAdd").addEventListener("click", () => {
 document.getElementById("copyText").addEventListener("click", () => {
     var copyText = document.getElementById("env1").value;
     document.getElementById("prw").innerText = copyText;
-    navigator.clipboard.writeText(document.getElementById("prw").innerText);
-    // alert("Berhasil Tersalin ");
-})
+
+    try {
+        navigator.clipboard.writeText(document.getElementById("prw").innerText);
+        alert("Berhasil Tersalin");
+    } catch (error) {
+        alert("Gagal Menyalin");
+    }
+});
